@@ -1,7 +1,7 @@
 const { Router } = require('express')
 const bcrypt = require('bcryptjs')
 const { check, validationResult } = require('express-validator')
-const config = require('../config/default.json')
+const config = require('config')
 const jwt = require('jsonwebtoken')
 const User = require('../models/User')
 const router = Router()
@@ -84,6 +84,7 @@ router.post(
     res.json({ token, userId: user.id })
       
   } catch (e) {
+    console.log('Error: ', e.message)
     res.status(500).json({ message: 'Something was wrong, try again' })
   }  
 })

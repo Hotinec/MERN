@@ -30,6 +30,16 @@ const AuthPage = () => {
     }
   }
 
+  const loginHandler = async () => {
+    console.log('Login!')
+    try {
+      const data = await request('/api/auth/login', 'POST', {...form})
+      message(data.message)
+    } catch (e) {
+      
+    }
+  }
+
   return (
     <div className="row">
       <div className="col s6 offset-s3">
@@ -66,6 +76,7 @@ const AuthPage = () => {
         <div className="card-action auth__buttons">
           <button 
             className="btn yellow darken-4"
+            onClick={loginHandler}
             disabled={loading} >
             Enter
           </button>
