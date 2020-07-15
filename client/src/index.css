@@ -22,3 +22,17 @@ input.yellow-input:focus {
   border-bottom: 1px solid #ffeb3b!important;
   box-shadow: 0 1px 0 0 #ffeb3b!important;
 }
+
+.nav-padding {
+  padding: 0 2rem;
+}
+
+.create-padding-top {
+  padding-top: 2rem;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+}
